@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+     android:background="@color/transit_main_bk"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="4dp"
+    >
+    <com.clw.view.MyButton 
+        android:id="@+id/id_top_back"
+          android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/personal_back1_u"
+        android:layout_centerVertical="true" 
+        />
+     <TextView
+        android:id="@+id/id_top_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/id_top_function"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/transparent"
+        android:textColor="@drawable/selector_top_function"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:layout_centerVertical="true"/>
+     <LinearLayout
+        android:id="@+id/id_top_divider"
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_toLeftOf="@id/id_top_function"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

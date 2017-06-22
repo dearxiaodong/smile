@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">智慧车联网应用市场</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+      <string name="action_close">退出</string>
+    <string name="str_prompt">提示信息</string>
+    <string name="person_login">登录</string>
+    <string name="str_app_name">成功获取到应用列表</string>
+    <string name="str_app_no_name">未获取到应用列表</string>
+    <string name="str_download_suc">成功下载apk</string>
+    <string name="str_download_fail">下载apk失败（未找到资源文件）</string>
+    <string name="registeruser_nick">昵称:</string>
+    <string name="registeruser_sex">性别:</string>
+    <string name="registeruser_confirm_pw">确认密码:</string>
+    <string name="registeruser_pw">密码:</string>
+    <string name="registeruser_email">电子邮箱:</string>
+    <string name="registeruser_phone">手机号码:</string>
+    <string name="registeruser_option">选填</string>
+    <string name="registeruser_phone_hint">请输入手机号码</string>
+    <string name="registeruser_email_hint">请输入电子邮箱地址</string>
+    <string name="registeruser_nick_hint">请输入您的昵称</string>
+    <string name="registeruser_register">注册</string>
+    <string name="registeruser_emailregister">邮箱注册</string>
+    <string name="net_state_disconnection">未连接网络，请检查网络设置</string>
+<string name="main_exit">再按一次退出程序</string>
+<string name="register_psw_hint">请输入密码</string>
+<string name="register_psw_hint_conf">请确认密码</string>
+</resources>
