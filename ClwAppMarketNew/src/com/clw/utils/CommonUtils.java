@@ -14,11 +14,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.ksoap2.serialization.SoapObject;
 
-
-
-
-
-
 import com.clw.clwappmarketnew.R;
 import com.clw.service.ReadRemoteService;
 
@@ -53,12 +48,13 @@ public class CommonUtils {
 	private static int INSTALLED_UPDATE = 2; // 表示已经安装，版本比现在这个版本要低，可以点击按钮更新
 
 	private static String sNameSpace = "http://122.226.253.93:8090/";
-//	private static String sWebserviceURL = "http://10.0.2.2/dbweb/ClwAppDb.asmx";
+	// private static String sWebserviceURL =
+	// "http://10.0.2.2/dbweb/ClwAppDb.asmx";
 	private static String sWebserviceURL = "http://122.226.253.93:8090/clwappdb/ClwAppDb.asmx";
-	
+
 	private static Boolean IsDotNetService = true;
-	
-	public static String sDownloadURL="http://122.226.253.93:8090/clwappdb/apkres";
+
+	public static String sDownloadURL = "http://122.226.253.93:8090/clwappdb/apkres";
 
 	/**
 	 * 检测网络是否可用
@@ -124,7 +120,6 @@ public class CommonUtils {
 			return true;
 		}
 
-	
 		if (obj instanceof CharSequence) {
 
 			return ((CharSequence) obj).length() == 0;
@@ -252,26 +247,21 @@ public class CommonUtils {
 	}
 
 	public static Object GetWebserviceData(String sMethodName, List<String> lst) {
-		
+
 		try {
-				ReadRemoteService readService = new ReadRemoteService(sNameSpace,
-				sMethodName, sWebserviceURL, IsDotNetService, lst);
-			Object Result = readService.Get();	
-			
+			ReadRemoteService readService = new ReadRemoteService(sNameSpace,
+					sMethodName, sWebserviceURL, IsDotNetService, lst);
+			Object Result = readService.Get();
+
 			return Result;
-				
+
 		} catch (Exception e) {
 			// TODO: handle exception
-			
+
 			return null;
 		}
-	
-		
 
-		
 	}
-
-	
 
 	public static Bitmap stringtoBitmap(String string) {
 		// 将b64字符串转换成Bitmap类型
@@ -367,51 +357,59 @@ public class CommonUtils {
 		}
 
 	}
-	
-	public static void SendMsg(Handler handler,int what, String obj, int arg1) {
+
+	public static void SendMsg(Handler handler, int what, String obj, int arg1) {
 		Message message = new Message();
 		message.what = what;
 		message.obj = obj;
 		message.arg1 = arg1;
 		handler.sendMessage(message);
 	}
-	
+
 	/**
-	* encodeBase64File:(将文件转成base64 字符串). <br/>
-	* @author guhaizhou@126.com
-	* @param path 文件路径
-	* @return
-	* @throws Exception
-	* @since JDK 1.6
-	*/
+	 * encodeBase64File:(将文件转成base64 字符串). <br/>
+	 * 
+	 * @author guhaizhou@126.com
+	 * @param path
+	 *            文件路径
+	 * @return
+	 * @throws Exception
+	 * @since JDK 1.6
+	 */
 	public static String encodeBase64File(String path) throws Exception {
-	File  file = new File(path);
-	FileInputStream inputFile = new FileInputStream(file);
-	byte[] buffer = new byte[(int)file.length()];
-	inputFile.read(buffer);
-	        inputFile.close();
-	        return Base64.encodeToString(buffer,Base64.DEFAULT);
+		File file = new File(path);
+		FileInputStream inputFile = new FileInputStream(file);
+		byte[] buffer = new byte[(int) file.length()];
+		inputFile.read(buffer);
+		inputFile.close();
+		return Base64.encodeToString(buffer, Base64.DEFAULT);
 	}
-	
+
 	/**
-	* decoderBase64File:(将base64字符解码保存文件). <br/>
-	* @author guhaizhou@126.com
-	* @param base64Code 编码后的字串
-	* @param savePath  文件保存路径
-	* @throws Exception
-	* @since JDK 1.6
-	*/
-	public static void decoderBase64File(String base64Code,String savePath) throws Exception {
-	//byte[] buffer = new BASE64Decoder().decodeBuffer(base64Code);
-	byte[] buffer =Base64.decode(base64Code, Base64.DEFAULT);
-	FileOutputStream out = new FileOutputStream(savePath);
-	out.write(buffer);
-	out.close();
+	 * decoderBase64File:(将base64字符解码保存文件). <br/>
+	 * 
+	 * @author guhaizhou@126.com
+	 * @param base64Code
+	 *            编码后的字串
+	 * @param savePath
+	 *            文件保存路径
+	 * @throws Exception
+	 * @since JDK 1.6
+	 */
+	public static void decoderBase64File(String base64Code, String savePath)
+			throws Exception {
+		// byte[] buffer = new BASE64Decoder().decodeBuffer(base64Code);
+		byte[] buffer = Base64.decode(base64Code, Base64.DEFAULT);
+		FileOutputStream out = new FileOutputStream(savePath);
+		out.write(buffer);
+		out.close();
 	}
-	public static String getSysDate(){
-		SimpleDateFormat    sDateFormat    =   new    SimpleDateFormat("yyyy-MM-dd hh:mm:ss");       
-		String    date    =    sDateFormat.format(new java.util.Date());    
-		
+
+	public static String getSysDate() {
+		SimpleDateFormat sDateFormat = new SimpleDateFormat(
+				"yyyy-MM-dd hh:mm:ss");
+		String date = sDateFormat.format(new java.util.Date());
+
 		return date;
 	}
 
