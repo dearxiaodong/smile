@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/include1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/layout_topcommon" />
+
+    <ImageView
+        android:id="@+id/img_sear_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rlsear"
+        android:src="@drawable/line" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/img_sear_line" >
+
+        <LinearLayout
+            android:id="@+id/lay_search_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rlsear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include1" >
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/search_style"
+            android:ems="10"
+            android:gravity="center_vertical|left"
+            android:hint="请输入搜索关键字"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:textStyle="italic" >
+
+            <requestFocus />
+        </AutoCompleteTextView>
+
+        <ImageView
+            android:id="@+id/img_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="false"
+            android:layout_alignRight="@+id/autoCompleteTv_search"
+            android:layout_centerVertical="true"
+            android:src="@drawable/window_close"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_search_do"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/autoCompleteTv_search"
+            android:layout_toRightOf="@+id/autoCompleteTv_search"
+            android:src="@drawable/toolbar_find"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

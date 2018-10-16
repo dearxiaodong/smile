@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/moreactivity_bk"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_mine_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/selector_mine_btn"
+        android:drawableLeft="@drawable/personal_phote"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="10dp"
+        android:text="@string/person_login"
+        android:textColor="@color/transit_main_text"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_mine_myapp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_mine_btn"
+        android:drawableLeft="@drawable/apps_stack"
+        android:gravity="center_vertical|left"
+        android:text="未装应用"
+        android:textColor="@color/transit_main_text"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_mine_syscon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/selector_mine_btn"
+        android:drawableLeft="@drawable/system_config_services"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="10dp"
+        android:text="设置"
+        android:textColor="@color/transit_main_text"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/transit_personal_line"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_mine_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine_btn"
+        android:drawableLeft="@drawable/system_software_update"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="10dp"
+        android:text="检查更新"
+        android:textColor="@color/transit_main_text"
+        android:textSize="16sp" />
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/transit_personal_line"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_mine_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine_btn"
+        android:drawableLeft="@drawable/personal_post"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="10dp"
+        android:text="关于"
+        android:textColor="@color/transit_main_text"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </LinearLayout>
+
+</LinearLayout>
