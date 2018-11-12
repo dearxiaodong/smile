@@ -74,7 +74,9 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void deleteByUid(Integer uid) {
     // todo
-
+        if (uid !=null){
+            userDao.deleteByPrimaryKey(uid);
+        }
 
     }
 
@@ -100,4 +102,11 @@ public class UserServiceImpl implements IUserService {
         }
             return userVoList.get(0);
     }
+
+
+
+
+
+
+
 }
