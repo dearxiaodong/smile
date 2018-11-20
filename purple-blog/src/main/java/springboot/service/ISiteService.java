@@ -3,6 +3,7 @@ package springboot.service;
 import springboot.dto.MetaDto;
 import springboot.modal.bo.ArchiveBo;
 import springboot.modal.bo.BackResponseBo;
+import springboot.modal.bo.StatisticsBo;
 import springboot.modal.vo.CommentVo;
 import springboot.modal.vo.ContentVo;
 
@@ -53,7 +54,7 @@ public interface ISiteService {
      *
      * @return
      */
-//    StatisticsBo getStatistics();
+   StatisticsBo getStatistics();
 
     /**
      * 查询文章归档

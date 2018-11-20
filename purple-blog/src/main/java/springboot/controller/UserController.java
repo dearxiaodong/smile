@@ -6,13 +6,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import springboot.modal.vo.UserVo;
 import springboot.modal.vo.UserVoExample;
-import springboot.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
+import springboot.service.UserServiceTest;
 
 import java.util.List;
 
@@ -23,13 +24,13 @@ public class UserController {
 
 
     @Autowired
-    UserService userService;
+    UserServiceTest userServiceTest;
 
     @RequestMapping("/getUser")
     @ResponseBody
     public UserVo getUserInfo(){
 
-        UserVo userVo= userService.getUserById(1);
+        UserVo userVo= userServiceTest.getUserById(1);
 
 
 
@@ -43,7 +44,7 @@ public class UserController {
 
 
 
-         List<UserVo> list = userService.getUser(userVoExample);
+         List<UserVo> list = userServiceTest.getUser(userVoExample);
           map.addAttribute("users",list);
 
 

@@ -330,4 +330,20 @@ public class UserVo {
     public void setGroupName(String groupName) {
         this.groupName = groupName == null ? null : groupName.trim();
     }
+
+    @Override
+    public String toString() {
+        return "UserVo{" +
+                "uid=" + uid +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", homeUrl='" + homeUrl + '\'' +
+                ", screenName='" + screenName + '\'' +
+                ", created=" + created +
+                ", activated=" + activated +
+                ", logged=" + logged +
+                ", groupName='" + groupName + '\'' +
+                '}';
+    }
 }
