@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="title='保存文章',active='publish'">
 <header th:replace="admin/header::headerFragment(${title},${active})"></header>
-<link th:href="@{/admin/plugins/tagsinput/jquery.tagsinput.css}" rel="stylesheet"/>
-<link th:href="@{/admin/plugins/select2.dist.css/select2-bootstrap.css}" rel="stylesheet"/>
-<link th:href="@{/admin/plugins/toggles/toggles.css}" rel="stylesheet"/>
+<link th:href="@{/static/admins/plugins/tagsinput/jquery.tagsinput.css}" rel="stylesheet"/>
+<link th:href="@{/static/admins/plugins/select2.dist.css/select2-bootstrap.css}" rel="stylesheet"/>
+<link th:href="@{/static/admins/plugins/toggles/toggles.css}" rel="stylesheet"/>
 
 <link href="//cdn.bootcss.com/multi-select/0.9.12/css/multi-select.css" rel="stylesheet"/>
 <link href="//cdn.bootcss.com/select2/3.4.8/select2.min.css" rel="stylesheet"/>
-<link th:href="@{/admin/plugins/mditor/css/mditor.min.css}" rel="stylesheet"/>
-<link th:href="@{/admin/plugins/dropzone/4.3.0/min/dropzone.min.css}" rel="stylesheet">
+<link th:href="@{/static/admins/plugins/mditor/css/mditor.css}" rel="stylesheet"/>
+
+<link th:href="@{/static/admins/plugins/dropzone/4.3.0/min/dropzone.min.css}" rel="stylesheet">
 <style>
     #tags_tagsinput {
         background-color: #fafafa;
@@ -149,6 +150,7 @@
                                 </select>
                             </div>
                             <div class="clearfix"></div>
+
                             <div id="md-container" class="form-group">
                                 <textarea id="md-editor" th:utext="${contents!=null and contents.content !=null}?${contents.content}: ''"></textarea>
                             </div>
@@ -216,16 +218,17 @@
 </div>
 <div th:replace="admin/footer :: footer"></div>
 
-<script th:src="@{/admin/plugins/tagsinput/jquery.tagsinput.min.js}"></script>
-<script th:src="@{/admin/plugins/jquery-multi-select/jquery.quicksearch.js}"></script>
+<script th:src="@{/static/admins/plugins/tagsinput/jquery.tagsinput.min.js}"></script>
+<script th:src="@{/static/admins/plugins/jquery-multi-select/jquery.quicksearch.js}"></script>
 
-<script th:src="@{/admin/plugins/mditor/js/mditor.min.js}"></script>
-<script th:src="@{/admin/plugins/multi-select/0.9.12/js/jquery.multi-select.min.js}"></script>
-<script th:src="@{/admin/plugins/select2/3.4.8/select2.min.js}"></script>
+<script th:src="@{/static/admins/plugins/mditor/js/mditor.js}"></script>
+
+<script th:src="@{/static/admins/plugins/multi-select/0.9.12/js/jquery.multi-select.min.js}"></script>
+<script th:src="@{/static/admins/plugins/select2/3.4.8/select2.min.js}"></script>
 <script th:src="@{//cdn.bootcss.com/jquery-toggles/2.0.4/toggles.min.js}"></script>
-<script th:src="@{/admin/plugins/dropzone/4.3.0/min/dropzone.min.js}"></script>
-<script th:src="@{/admin/plugins/to-markdown/3.1.0/to-markdown.min.js}"></script>
+<script th:src="@{/static/admins/plugins/dropzone/4.3.0/min/dropzone.min.js}"></script>
+<script th:src="@{/static/admins/plugins/to-markdown/3.1.0/to-markdown.min.js}"></script>
 
-<script th:src="@{/admin/js/article.js}"></script>
+<script th:src="@{/static/admins/js/article.js}"></script>
 </body>
 </html>

@@ -55,7 +55,7 @@ public class ContentServiceImpl implements IContentService {
     private RedisService redisService;
 
     @Override
-    public void publish(ContentVo contents) {
+    public int publish(ContentVo contents) {
         checkContent(contents);
         if (StringUtils.isNotBlank(contents.getSlug())) {
             if (contents.getSlug().length() < 5) {
@@ -83,6 +83,8 @@ public class ContentServiceImpl implements IContentService {
         contents.setCommentsNum(0);
 
         contentDao.insert(contents);
+//        contentDao.insertSelective(contents);
+
 
         String tags = contents.getTags();
         String categories = contents.getCategories();
@@ -90,6 +92,9 @@ public class ContentServiceImpl implements IContentService {
 
         metasService.saveMetas(cid, tags, Types.TAG.getType());
         metasService.saveMetas(cid, categories, Types.CATEGORY.getType());
+
+        // 返回新增文章的cid
+        return cid;
     }
 
     @Override
@@ -184,7 +189,7 @@ public class ContentServiceImpl implements IContentService {
     }
 
     @Override
-    public void updateArticle(ContentVo contents) {
+    public int updateArticle(ContentVo contents) {
         // 检查文章输入
         checkContent(contents);
         if (StringUtils.isBlank(contents.getSlug())) {
@@ -203,6 +208,8 @@ public class ContentServiceImpl implements IContentService {
         relationshipService.deleteById(cid, null);
         metasService.saveMetas(cid, contents.getTags(), Types.TAG.getType());
         metasService.saveMetas(cid, contents.getCategories(), Types.CATEGORY.getType());
+
+        return cid;
     }
 
     @Override
@@ -214,10 +221,27 @@ public class ContentServiceImpl implements IContentService {
         contentDao.updateByExampleSelective(contentVo, example);
     }
 
+    @Override
+    public Integer autoSaveContent(ContentVo contents) throws TipException {
+        // 当文章地址不为空时
+        if (StringUtils.isNotBlank(contents.getSlug())) {
+            Integer cid = null;
+            ContentVoExample contentVoExample = new ContentVoExample();
+            contentVoExample.createCriteria().andTypeEqualTo(contents.getType()).andSlugEqualTo(contents.getSlug());
+            long count = contentDao.countByExample(contentVoExample);
+            if (count > 0) {
+                cid = updateArticle(contents);
+            } else {
+                cid = publish(contents);
+            }
+            return cid;
+        }
+        return null;
+    }
 
 
     private void  checkContent(ContentVo contents) throws TipException {
-        if (null == contents) {
+        if (null == contents || null==contents.getCid()) {
             throw new TipException("文章对象不能为空");
         }
         if (StringUtils.isBlank(contents.getTitle())) {

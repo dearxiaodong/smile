@@ -8,7 +8,7 @@
     <title>登录博客后台</title>
 
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <link rel="shortcut icon" th:href="@{/admin/images/favicon.png}"/>
+    <link rel="shortcut icon" th:href="@{/static/admins/images/favicon.png}"/>
 
 
 
@@ -20,7 +20,7 @@
     <script th:src="@{/assets/js/amazeui.min.js}"></script>
     <link rel="stylesheet" th:href="@{/assets/css/amazeui.min.css}"/>
     <link rel="stylesheet" th:href="@{/assets/css/app.css}"/>
-    <script th:src="@{/admin/js/base.js}"></script>
+    <script th:src="@{/static/admins/js/base.js}"></script>
 </head>
 <body>
 
@@ -32,7 +32,7 @@
             <form class="am-form" id="loginForm">
 
                 <div class="am-input-group am-radius am-animation-slide-left">
-                    <input type="text" class="am-radius" name="username"/>
+                    <input type="text" class="am-radius" placeholder="用户名" name="username"/>
                     <span class="am-input-group-label log-icon am-radius"><i
                             class="am-icon-user am-icon-sm am-icon-fw"></i></span>
                 </div>

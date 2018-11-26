@@ -53,6 +53,7 @@ public class BaseInterceptor implements HandlerInterceptor {
         }
         // 处理uri
         if (uri.startsWith("/admin") && !uri.startsWith("/admin/login") && null == user) {
+
             try {
                 response.sendRedirect(request.getContextPath() + "/admin/login");
             } catch (IOException e) {

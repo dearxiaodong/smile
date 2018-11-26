@@ -10,7 +10,7 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;am-input-group
           box-sizing: border-box;
 }
 /* normalize.css v3.0.2 | git.io/normalize */

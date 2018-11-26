@@ -166,7 +166,26 @@ public class ArticleController extends AbstractController {
         return RestResponseBo.ok();
     }
 
-
+    @PostMapping(value = "/autoSave")
+    @ResponseBody
+    @Transactional(rollbackFor = TipException.class)
+    public RestResponseBo autoSave(ContentVo contents, HttpServletRequest request) {
+        int cid;
+        UserVo users = this.user(request);
+        contents.setAuthorId(users.getUid());
+        contents.setType(Types.ARTICLE.getType());
+        if (StringUtils.isBlank(contents.getCategories())) {
+            contents.setCategories("默认分类");
+        }
+        // 判断是否存在数据库中，如果不存在，则新增，如果存在则更新
+        try {
+            cid = contentService.autoSaveContent(contents);
+        } catch (Exception e) {
+            String msg = "自动保存文章失败";
+            return ExceptionHelper.handlerException(logger, msg, e);
+        }
+        return new RestResponseBo(true, cid);
+    }
 
 
 }
